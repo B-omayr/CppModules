@@ -6,84 +6,92 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 14:05:53 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/20 18:15:29 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/21 18:58:18 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-
-void SetContact(
-    std::string FirstName,
-    std::string SecondName,
-    std::string NickName,
-    std::string PhoneNumber,
-    std::string DarkestSecret)
-{
-    
-}
-
-int Phonebook::AddContact (
-    std::string FirstName,
-    std::string SecondName,
-    std::string NickName,
-    std::string PhoneNumber,
-    std::string DarkestSecret)
-{
-    this->contact[0].SetContact(FirstName, SecondName, NickName, PhoneNumber, DarkestSecret)
-    {
-        
-    } 
-}                                                                               
-                           
+#include "PhoneBook.hpp"                
 
 std::string GetInput(std::string str)
 {
     std::string input;
 
     std::cout << "Enter " << str << " : ";
-    getline(std::cin, input);
-    if (!input.compare(""))
-        std::cout << str << "\033[1;31m Field cannot be empty\033[0;m" << std::endl;
+    if (!getline(std::cin, input) || !input.compare(""))
+    {
+        std::cout << "\033[1;31mWarning : \" Field cannot be empty!!! \"\033[0;m" << std::endl;
+        std::cout << "\033[1;34mMake Sure To Fill All The Field Next Time ...\033[0;m" << std::endl ;
+    }  
     return (input);
 }
 
-void FtAdd(Phonebook *Phonebook)
+void FtAdd(PhoneBook *Phonebook)
 {
-    std::string FirstName;
-    std::string SecondName;
-    std::string NickName;
-    std::string PhoneNumber;
-    std::string DarkestSecret;
+    std::string _FirstName;
+    std::string _SecondName;
+    std::string _NickName;
+    std::string _PhoneNumber;
+    std::string _DarkestSecret;
 
-    FirstName = GetInput("First Name");
-    if (!FirstName[0])
+    _FirstName = GetInput("First Name");
+    if (!_FirstName[0])
         return;
-    SecondName = GetInput("Second Name");
-    if (!SecondName[0])
+    _SecondName = GetInput("Second Name");
+    if (!_SecondName[0])
         return;
-    NickName = GetInput("Nick Name");
-    if (!NickName[0])
+    _NickName = GetInput("Nick Name");
+    if (!_NickName[0])
         return;
-    PhoneNumber = GetInput("Phone Number");
-    if (!PhoneNumber[0])
+    _PhoneNumber = GetInput("Phone Number");
+    if (!_PhoneNumber[0])
         return;
-    DarkestSecret = GetInput("Darkest Secret");
-    if (!DarkestSecret[0])
+    _DarkestSecret = GetInput("Darkest Secret");
+    if (!_DarkestSecret[0])
         return;
-    if (Phonebook->AddContact(FirstName, SecondName, NickName, PhoneNumber, DarkestSecret))
+    if (Phonebook->AddContact(_FirstName, _SecondName, _NickName, _PhoneNumber, _DarkestSecret))
+        std::cout << "\033[1;34mYour Contact Was Add Succefully\033[0;m" << std::endl;
+}
+
+void DisplayColumn(std::string Column[4])
+{
+    std::cout << std::string(45, '-') << std::endl;
+    std::cout << "|" ;
+    for (int i = 0; i < 4; i++)
+    {
+        std::cout << std::setw(10) << Column[i] ;
+        std::cout << "|" ;
+    }
+    std::cout << std::endl;
+}
+
+void PhoneBook::DisplayContact(void)
+{
+    std::string Column[4] = {"Index", "FirstName", "Last Name", "Nickname"};
+    DisplayColumn(Column);
+    for (int i = 0; i < this->NbContact; i++)
+    {
+        
+    }
+}
+
+void FtSearch(PhoneBook *phonebook)
+{
+    phonebook->DisplayContact();
 }
 
 int main()
 {
-    Phonebook phonebook;
+    PhoneBook phonebook;
     std::string input;
     while (1)
     {
         std::cout << "\033[1;33mCMD>\033[0m";
-        getline(std::cin >> std::ws, input);
-        if (input == "EXIT")
-            return (std::cout << "\033[1;34mSee You Later!!!\033[0;m\n", 0);
+       ;
+        if (!getline(std::cin >> std::ws, input) || input == "EXIT")
+            return (std::cout << "\n\033[1;34mSee You Later!!!\033[0;m\n", 0);
         else if (input == "ADD")
             FtAdd(&phonebook);
+        else if (input == "SEARCH")
+            FtSearch(&phonebook);
     }
 }

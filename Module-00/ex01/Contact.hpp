@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:19:51 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/20 18:48:33 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/21 12:12:57 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ class Contact {
             std::string SecondName, std::string NickName,
             std::string PhoneNumber, std::string DarkestSecret);
 
-        Contact(void);
+        Contact(void)
+        {
+            
+        }
 };
 
 # endif
