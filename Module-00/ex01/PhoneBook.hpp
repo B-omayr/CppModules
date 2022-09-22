@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:49:20 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/21 18:55:05 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/22 11:20:08 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <string>
-#include "iomanip"
+#include <iomanip>
+#include <sstream>
+#include <cstring>
 
 class PhoneBook
 {

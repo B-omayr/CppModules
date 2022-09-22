@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 14:05:53 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/21 18:58:18 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/22 12:44:48 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"                
+#include "PhoneBook.hpp"             
 
 std::string GetInput(std::string str)
 {
@@ -54,14 +54,33 @@ void FtAdd(PhoneBook *Phonebook)
 
 void DisplayColumn(std::string Column[4])
 {
+    char str[11];
     std::cout << std::string(45, '-') << std::endl;
     std::cout << "|" ;
     for (int i = 0; i < 4; i++)
     {
+        if (Column[i].length() >= 10)
+        {
+            Column[i] = Column[i].substr(0, 9);
+            Column[i].copy(str, 10, 0);
+            str[9] = '.';
+            str[10] = '\0';
+            Column[i] = str;
+        }
         std::cout << std::setw(10) << Column[i] ;
         std::cout << "|" ;
     }
     std::cout << std::endl;
+}
+
+std::string ConvertToString(int num)
+{
+    std::ostringstream   str1;
+    std::string          output;
+    
+    str1 << num;
+    output = str1.str();
+    return (output);
 }
 
 void PhoneBook::DisplayContact(void)
@@ -70,13 +89,20 @@ void PhoneBook::DisplayContact(void)
     DisplayColumn(Column);
     for (int i = 0; i < this->NbContact; i++)
     {
-        
+        std::string Column[4] = {
+            ConvertToString(i + 1),
+            this->contact[i].GetFirstName(),
+            this->contact[i].GetSecondName(),
+            this->contact[i].GetNickName()};
+        DisplayColumn(Column);
     }
+    std::cout << std::string(45, '-') << std::endl;
 }
 
 void FtSearch(PhoneBook *phonebook)
 {
     phonebook->DisplayContact();
+    // std::cout << ""
 }
 
 int main()
