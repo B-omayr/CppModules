@@ -6,17 +6,17 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:22:16 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/21 17:51:55 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/22 16:27:37 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Main.hpp"
 
 void Contact::SetContact(
     std::string _FirstName,
     std::string _SecondName,
     std::string _NickName,
-    std::string _PhoneNumber, 
+    std::string _PhoneNumber,
     std::string _DarkestSecret)
 {
     this->FirstName = _FirstName;
@@ -30,7 +30,7 @@ void Contact::SetContact(
 
 std::string Contact::GetFirstName(void)
 {
-   return (this->FirstName);
+    return (this->FirstName);
 }
 
 std::string Contact::GetSecondName(void)
