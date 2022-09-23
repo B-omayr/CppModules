@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:27:58 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/22 18:35:01 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/23 08:36:38 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ unsigned int CheckInput(std::string str)
         return (1);
     else
     {
-        std::cout << "Index Out Of Range" << std::endl;
+        std::cout << "Invalid Index" << std::endl;
         return (0);
     }
 }
