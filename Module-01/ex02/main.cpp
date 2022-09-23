@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 17:14:16 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/23 17:56:47 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/23 18:08:21 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int main()
     std::cout << &str << std::endl;
     std::cout << &stringPTR << std::endl;
     std::cout << &stringREF << std::endl;
+    
+    std::cout << std::endl;
     
     std::cout << str << std::endl;
     std::cout << *stringPTR << std::endl;
