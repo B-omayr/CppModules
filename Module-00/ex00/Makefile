@@ -6,7 +6,7 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 15:40:03 by iomayr            #+#    #+#              #
-#    Updated: 2022/09/23 09:11:23 by iomayr           ###   ########.fr        #
+#    Updated: 2022/09/23 15:49:31 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,21 @@ CC = c++
 
 SRC = megaphone.cpp 
 
+OBJ = ${SRC:%.cpp=%.o}
+
 NAME = megaphone
 
 all: ${NAME}
 
-${NAME}: ${SRC}
-	${CC} ${CFLAGS} ${SRC} -o ${NAME}
+${NAME}: ${OBJ}
+	@${CC} ${CFLAGS} ${OBJ} -o ${NAME}
+	@echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
 
-clean: #Nothing to be done for 'clean'
+clean:
+	@rm *.o
 
 fclean: clean
-	rm ${NAME}
+	@rm ${NAME}
+	@echo "\033[1;32m##########CLEANED SUCCESSFULY##########\033[0m"
 
 re: fclean all

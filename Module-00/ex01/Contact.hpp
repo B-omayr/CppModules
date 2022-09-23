@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:19:51 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/22 17:41:00 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/23 10:05:17 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Contact
 {
 private:
+
     //private member attribute
     std::string FirstName;
     std::string SecondName;
@@ -26,6 +27,7 @@ private:
     std::string DarkestSecret;
 
 public:
+
     //member functions
     std::string GetFirstName(void);
     std::string GetSecondName(void);
@@ -36,9 +38,6 @@ public:
                     std::string SecondName, std::string NickName,
                     std::string PhoneNumber, std::string DarkestSecret);
 
-    Contact(void)
-    {
-    }
 };
 
 #endif

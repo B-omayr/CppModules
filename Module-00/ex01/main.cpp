@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 14:05:53 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/22 18:31:24 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/23 12:17:13 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void FtSearch(PhoneBook *phonebook)
 
 int main()
 {
-    PhoneBook phonebook;
+    PhoneBook   phonebook;
     std::string input;
     while (1)
     {
