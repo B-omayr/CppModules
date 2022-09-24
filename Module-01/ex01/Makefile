@@ -6,7 +6,7 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 16:58:57 by iomayr            #+#    #+#              #
-#    Updated: 2022/09/23 17:10:01 by iomayr           ###   ########.fr        #
+#    Updated: 2022/09/24 12:59:17 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,10 @@ ${NAME}: ${OBJ} ${INC}
 	@echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
 
 clean:
-	@rm *.o
+	@rm -rf *.o
 
 fclean: clean
-	@rm ${NAME}
+	@rm -rf ${NAME}
 	@echo "\033[1;32m##########CLEANED SUCCESSFULY##########\033[0m"
 
 re: fclean all
