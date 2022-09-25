@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 14:04:57 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/25 09:11:56 by iomayr           ###   ########.fr       */
+/*   Created: 2022/09/25 09:10:05 by iomayr            #+#    #+#             */
+/*   Updated: 2022/09/25 09:11:29 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace.hpp"
+#ifndef REPLACE_HPP
+# define REPLACE_HPP
 
-int main(int ac, char **av)
-{
-    if (ac != 4)
-    {
-        std::cout << "\033[1;31mYou enter a wrong argument\n\033[0;m";
-        return (1);
-    }
-    std::string fileName = av[1];
-    std::string s1 = av[2];
-    std::string s2 = av[3];
+#include <fstream>
+#include <iostream>
+#include <string>
 
-    ft_replace(fileName, s1, s2);
-}
+void ft_replace(std::string filename, std::string s1, std::string s2);
+
+#endif
