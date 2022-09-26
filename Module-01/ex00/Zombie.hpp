@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 09:54:17 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/23 15:03:26 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/26 16:30:34 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ class Zombie {
         Zombie(std::string name);
         ~Zombie(void);
         
+        void        randomChump(std::string name);
         void        announce(void);
 
 };
 
-void        randomChump(std::string name);
 Zombie      *newZombie(std::string name);
 
 #endif

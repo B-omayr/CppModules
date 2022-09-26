@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:38:04 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/24 10:47:19 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/26 18:09:55 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int main()
     david->announce();
     Zomb->announce();
     delete Zomb;
+    delete david; 
 }

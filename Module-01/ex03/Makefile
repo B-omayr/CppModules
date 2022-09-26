@@ -6,7 +6,7 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 12:28:34 by iomayr            #+#    #+#              #
-#    Updated: 2022/09/24 12:58:30 by iomayr           ###   ########.fr        #
+#    Updated: 2022/09/26 18:15:07 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,9 @@ NAME = violence
 
 all: ${NAME}
 
-${NAME}: ${OBJ} ${INC}
-	@${CC} ${CFLAGS} ${OBJ} -o ${NAME}
-	@echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
+${NAME}: ${OBJ}
+	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
+	# echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
 
 clean:
 	@rm -rf *.o

@@ -6,11 +6,15 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 09:49:05 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/24 13:20:25 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/26 18:13:40 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
+
+HumanB::HumanB(void)
+{
+}
 
 HumanB::HumanB(std::string name)
 {

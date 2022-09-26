@@ -6,7 +6,7 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 17:54:43 by iomayr            #+#    #+#              #
-#    Updated: 2022/09/24 12:59:09 by iomayr           ###   ########.fr        #
+#    Updated: 2022/09/26 17:08:18 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ NAME = ThisIsBrain
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	@${CC} ${CFLAGS} ${OBJ} -o ${NAME}
+	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
 	@echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
 
 clean:

@@ -6,7 +6,7 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 16:58:57 by iomayr            #+#    #+#              #
-#    Updated: 2022/09/24 12:59:17 by iomayr           ###   ########.fr        #
+#    Updated: 2022/09/26 18:17:30 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME = MoarBrainz
 all: ${NAME}
 
 ${NAME}: ${OBJ} ${INC}
-	@${CC} ${FLAGS} ${OBJ} -o ${NAME}
+	${CC} ${FLAGS} ${OBJ} -o ${NAME}
 	@echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
 
 clean:

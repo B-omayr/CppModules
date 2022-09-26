@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:33:48 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/24 15:32:59 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/26 18:13:23 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class HumanB {
 
     public:
 
+        HumanB(void);
         HumanB(std::string name);
         void attack(void);
         void setWeapon(Weapon &weapon);

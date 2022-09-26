@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:22:01 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/24 12:00:08 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/26 18:12:40 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanA {
         std::string name;
 
     public:
-
+    
         HumanA(std::string name, Weapon &_weapon);
         void attack(void); 
         ~HumanA();
