@@ -6,11 +6,11 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 17:54:43 by iomayr            #+#    #+#              #
-#    Updated: 2022/09/26 17:08:18 by iomayr           ###   ########.fr        #
+#    Updated: 2022/09/27 16:17:14 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC = c++ 
 
@@ -20,14 +20,17 @@ OBJ = ${SRC:%.cpp=%.o}
 
 NAME = ThisIsBrain
 
+%.o : %.cpp ${INC}
+	@${CC} ${FLAGS} -c $< -o $@
+
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
+	@${CC} ${FLAGS} ${OBJ} -o ${NAME}
 	@echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
 
 clean:
-	@rm -rf *.o
+	@rm -rf ${OBJ}
 
 fclean: clean
 	@rm -rf ${NAME}

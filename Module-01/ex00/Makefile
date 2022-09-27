@@ -6,7 +6,7 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 15:33:54 by iomayr            #+#    #+#              #
-#    Updated: 2022/09/26 18:09:13 by iomayr           ###   ########.fr        #
+#    Updated: 2022/09/27 16:17:27 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,17 @@ INC = Zombie.hpp
 
 NAME = BraiiiiiiinnnzzzZ
 
+%.o : %.cpp ${INC}
+	@${CC} ${FLAGS} -c $< -o $@
+
 all: ${NAME}
 
 ${NAME}: ${OBJ} ${INC}
-	${CC} ${FLAGS} ${OBJ} -o ${NAME}
+	@${CC} ${FLAGS} ${OBJ} -o ${NAME}
 	@echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
 
 clean:
-	@rm -rf *.o
+	@rm -rf ${OBJ}
 
 fclean: clean
 	@rm -rf ${NAME}

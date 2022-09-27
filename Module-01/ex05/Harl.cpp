@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 11:15:33 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/25 14:07:03 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/26 15:49:59 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ Harl::Harl()
     level[1] = "INFO";
     level[2] = "WARNING";
     level[3] = "ERROR";
+
 }
 
 Harl::~Harl()
 {
-    std::cout << "\033[1;31mObj was destroyed\033[0;m" << std::endl;
+    std::cout << "\033[1;33mObj was destroyed\033[0;m" << std::endl;
 }
 
 void Harl::debug(void)

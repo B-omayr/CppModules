@@ -6,11 +6,11 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 12:28:34 by iomayr            #+#    #+#              #
-#    Updated: 2022/09/26 18:15:07 by iomayr           ###   ########.fr        #
+#    Updated: 2022/09/27 16:17:07 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC = c++ 
 
@@ -24,12 +24,15 @@ NAME = violence
 
 all: ${NAME}
 
+%.o : %.cpp ${INC}
+	@${CC} ${FLAGS} -c $< -o $@
+
 ${NAME}: ${OBJ}
-	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
-	# echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
+	@${CC} ${FLAGS} ${OBJ} -o ${NAME}
+	@#echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
 
 clean:
-	@rm -rf *.o
+	@rm -rf ${OBJ}
 
 fclean: clean
 	@rm -rf ${NAME}

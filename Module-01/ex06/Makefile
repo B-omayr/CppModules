@@ -6,11 +6,11 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 15:37:53 by iomayr            #+#    #+#              #
-#    Updated: 2022/09/25 15:38:07 by iomayr           ###   ########.fr        #
+#    Updated: 2022/09/27 16:16:43 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC = c++ 
 
@@ -22,17 +22,20 @@ INC = Harl.hpp
 
 NAME = harlFilter
 
+%.o : %.cpp ${INC}
+	@${CC} ${FLAGS} -c $< -o $@
+
 all: ${NAME}
 
 ${NAME}: ${OBJ} ${INC}
-	@${CC} ${CFLAGS} ${OBJ} -o ${NAME}
+	@${CC} ${FLAGS} ${OBJ} -o ${NAME}
 	@echo "\033[1;32m##########COMPILED SUCCESSFULY##########\033[0m"
 
 clean:
-	@rm *.o
+	@rm -rf ${OBJ}
 
 fclean: clean
-	@rm ${NAME}
+	@rm -rf ${NAME}
 	@echo "\033[1;32m##########CLEANED SUCCESSFULY##########\033[0m"
 
 re: fclean all
