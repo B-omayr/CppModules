@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:29:35 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/23 16:57:25 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/28 08:58:57 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ Zombie::~Zombie(void)
     std::cout << "Zombie " << this->name << " is dead" << std::endl;
 }
 
-std::string Zombie::announce(void)
+void Zombie::announce(void)
 {
     std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-    return (this->name);
 }
 

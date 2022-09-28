@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:36:29 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/27 16:27:22 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/28 08:59:44 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,5 @@
 int main()
 {
     Zombie *_zombies = zombieHorde(10, "IBRA");
-    for (int i = 0; i < 10; i++)
-        std::cout << _zombies[i].announce() << std::endl;
     delete [] _zombies;
 }

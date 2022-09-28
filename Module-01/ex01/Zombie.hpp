@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:18:17 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/23 16:52:51 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/09/28 08:59:04 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Zombie{
         ~Zombie();
         
         void SetName(std::string name);
-        std::string announce(void);
+        void announce(void);
 };
 
 Zombie *zombieHorde(int N, std::string name);
