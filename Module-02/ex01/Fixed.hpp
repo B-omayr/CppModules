@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 18:11:39 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/30 08:35:40 by iomayr           ###   ########.fr       */
+/*   Created: 2022/09/30 14:28:38 by iomayr            #+#    #+#             */
+/*   Updated: 2022/09/30 16:45:22 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,18 @@ class Fixed {
 	public:
 
         Fixed();
+        Fixed(const int Num);
+        Fixed(const float Num);
         Fixed(Fixed &oldOne);
+        Fixed	& operator = (Fixed &Input);
         ~Fixed();
     
-        Fixed	&operator = (Fixed &Input);
-        int	getRawBits(void) const;
-        void	setRawBits(int const raw);
+        float   toFloat(void) const;
+        int     toInt(void) const;
+        int     getRawBits(void) const;
+        void    setRawBits(int const raw);
 };
+
+std::ostream & operator<<(std::ostream &out, const Fixed &F);//this
 
 #endif
