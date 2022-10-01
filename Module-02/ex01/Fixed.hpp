@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:28:38 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/30 16:45:22 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/01 10:06:24 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 class Fixed {
     private:
@@ -28,7 +29,7 @@ class Fixed {
         Fixed(const int Num);
         Fixed(const float Num);
         Fixed(Fixed &oldOne);
-        Fixed	& operator = (Fixed &Input);
+        Fixed	& operator = (const Fixed &Input);
         ~Fixed();
     
         float   toFloat(void) const;
@@ -37,6 +38,6 @@ class Fixed {
         void    setRawBits(int const raw);
 };
 
-std::ostream & operator<<(std::ostream &out, const Fixed &F);//this
+std::ostream & operator << (std::ostream &output, const Fixed &obj);
 
 #endif

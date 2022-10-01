@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:28:35 by iomayr            #+#    #+#             */
-/*   Updated: 2022/09/30 17:17:44 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/01 10:05:04 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ Fixed::Fixed()
 
 Fixed::Fixed(const int Num)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 	this->FixPn = Num * (1 << this->NbPnFract);
 }
 
 Fixed::Fixed(const float Num)
 {
-	std::cout << "Default constructor called" << std::endl;
-	this->FixPn = Num * (1 << this->NbPnFract);
+	std::cout << "Float constructor called" << std::endl;
+	this->FixPn = (int)(roundf(Num * (1 << this->NbPnFract)));
 }
 
 Fixed::Fixed(Fixed &oldOne)
@@ -36,7 +36,7 @@ Fixed::Fixed(Fixed &oldOne)
 	*this = oldOne;
 }
 
-Fixed &Fixed::operator = (Fixed &Input)
+Fixed & Fixed::operator = (const Fixed &Input)
 {
     if (this != &Input)
     {
@@ -69,10 +69,10 @@ int Fixed::toInt(void) const
 
 float Fixed::toFloat(void) const
 {
-    return ((double)this->FixPn / (double)(1 << this->NbPnFract));
+    return ((float)this->FixPn / (float)(1 << this->NbPnFract));
 }
 
-std::ostream & operator<<(std::ostream &out, const Fixed &oldOne){
-	out << oldOne.toFloat();
-	return out;
+std::ostream & operator<<(std::ostream &output, const Fixed &obj){
+	output << obj.toFloat();
+	return output;
 }
