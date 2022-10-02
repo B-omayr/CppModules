@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:28:38 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/01 10:06:24 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/02 09:11:46 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Fixed {
         Fixed();
         Fixed(const int Num);
         Fixed(const float Num);
-        Fixed(Fixed &oldOne);
+        Fixed(const Fixed &oldOne);
         Fixed	& operator = (const Fixed &Input);
         ~Fixed();
     

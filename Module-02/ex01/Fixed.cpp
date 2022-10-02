@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:28:35 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/01 10:05:04 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/02 09:12:04 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Fixed::Fixed(const float Num)
 	this->FixPn = (int)(roundf(Num * (1 << this->NbPnFract)));
 }
 
-Fixed::Fixed(Fixed &oldOne)
+Fixed::Fixed(const Fixed &oldOne)
 {
 	std::cout << "Copy constructor called " << std::endl;
 	*this = oldOne;
