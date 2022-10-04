@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 10:44:39 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/04 12:11:54 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/04 14:12:56 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,15 @@ void edditingClapTrap(ClapTrap (&P)[2])
 void letsPlay(ClapTrap (&P)[2])
 {
     P[0].attack(P[1].getName());
-    displayAttribute(P);
     P[1].takeDamage(P[0].getAD());
     displayAttribute(P);
     P[1].attack(P[0].getName());
-    displayAttribute(P);
     P[0].takeDamage(P[1].getAD());
     displayAttribute(P);
     P[1].beRepaired(P[0].getAD());
+    displayAttribute(P);
+    P[1].attack(P[0].getName());
+    P[0].takeDamage(P[1].getAD());
     displayAttribute(P);
 }
 
