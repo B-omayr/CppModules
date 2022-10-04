@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 10:45:53 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/03 17:23:01 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/04 11:05:00 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CLAPTRAP_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 class ClapTrap {
@@ -35,7 +36,18 @@ class ClapTrap {
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+
+		void setHitPoint();
+		void setEnergyPoint();
+		void setAttackDamage();
+
+		std::string getName() const;
+		unsigned int getHP() const;
+		unsigned int getEP() const;
+		unsigned int getAD() const;
+		
 };
 
+int	FtAtoi(std::string s);
 
 #endif
