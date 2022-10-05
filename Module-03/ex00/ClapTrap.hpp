@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 10:45:53 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/04 15:46:58 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/05 18:16:44 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,6 @@ public:
 	void attack(const std::string &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-
-	void setHP();
-	void setEP();
-	void setAD();
 
 	std::string getName() const;
 	unsigned int getHP() const;
