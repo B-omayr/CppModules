@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:24:31 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/05 15:07:17 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/05 18:33:30 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ ClapTrap::ClapTrap()
 ClapTrap::ClapTrap(std::string name)
 {
     this->Name = name;
-    this->HitPoint = 100;
-    this->EnergyPoint = 50;
-    this->AttackDamage = 20;
+    this->HitPoint = 10;
+    this->EnergyPoint = 10;
+    this->AttackDamage = 0;
     std::cout << "\033[1;32mClapTrap " << name << " created\033[0;m" << std::endl;
 }
 
@@ -56,6 +56,9 @@ void ClapTrap::attack(const std::string &target)
         std::cout << "ClapTrap " << this->Name << " attacks " << target << " , causing "
                   << this->AttackDamage << " points of damage!" << std::endl;
     }
+    else
+        std::cout << "\033[1;31mClapTrap " << this->Name << \
+                " Can't Attac cause he was no more EnergyPoint\033[0;m" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -84,39 +87,6 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << this->Name << " repaired Himself with "
                   << amount << " of Energy" << std::endl;
     }
-}
-
-void ClapTrap::setHP(void)
-{
-    std::string input;
-    do
-    {
-        std::cout << "[ Set The Hit Point For " << std::setw(10) << this->Name << "    Please  ] : ";
-        getline(std::cin, input);
-    } while (FtAtoi(input) == 0);
-    this->HitPoint = FtAtoi(input);
-}
-
-void ClapTrap::setAD(void)
-{
-    std::string input;
-    do
-    {
-        std::cout << "[ Set The Attack Damage For " << std::setw(10) << this->Name << " Please ] : ";
-        getline(std::cin, input);
-    } while (FtAtoi(input) == 0);
-    this->AttackDamage = FtAtoi(input);
-}
-
-void ClapTrap::setEP(void)
-{
-    std::string input;
-    do
-    {
-        std::cout << "[ Set The Energy Point For " << std::setw(10) << this->Name << "  Please ] : ";
-        getline(std::cin, input);
-    } while (FtAtoi(input) == 0);
-    this->EnergyPoint = FtAtoi(input);
 }
 
 std::string ClapTrap::getName() const

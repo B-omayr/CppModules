@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:25:20 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/05 13:35:00 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/05 18:37:50 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ScavTrap : public ClapTrap{
         ~ScavTrap();
         
 	    void attack(const std::string &target);
+        void guardGate();
 };
 
 #endif
