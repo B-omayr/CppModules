@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 08:42:45 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/06 09:10:23 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/07 12:16:31 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ class FragTrap : public ClapTrap {
     public:
         FragTrap();
         FragTrap(std::string name);
+        FragTrap(const FragTrap &oldOne);
+        FragTrap &operator = (const FragTrap &Input);
         ~FragTrap();
 
         void attack(const std::string &target);

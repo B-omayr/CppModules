@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 08:42:40 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/06 09:27:47 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/07 12:41:19 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,26 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
     this->EnergyPoint = 100;
     this->AttackDamage = 30;
 }
+
+FragTrap::FragTrap(const FragTrap &oldOne) : ClapTrap()
+{
+    std::cout << "\033[1;32mFragTrap Copy Constructor Called\033[0;m" << std::endl;
+    *this = oldOne;
+}
+
+FragTrap &FragTrap::operator = (const FragTrap &Input)
+{
+    if (this != &Input)
+    {
+        std::cout << "\033[1;32mFragTrap Copy Assignement Operator Called\033[0;m" << std::endl;
+        this->Name = Input.Name;
+        this->HitPoint = Input.HitPoint;
+        this->EnergyPoint = Input.EnergyPoint;
+        this->AttackDamage = Input.AttackDamage;
+    }
+    return *this;
+}
+
 
 FragTrap::~FragTrap()
 {

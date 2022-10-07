@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 08:39:33 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/06 09:13:56 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/07 12:28:37 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &oldOne)
 {
+    std::cout << "\033[1;32mClapTrap Copy Constructor Called\033[0;m" << std::endl;
     *this = oldOne;
 }
 
@@ -35,6 +36,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &Input)
 {
     if (this != &Input)
     {
+        std::cout << "\033[1;32mClapTrap Assignement operator Called\033[0;m" << std::endl;
         this->Name = Input.Name;
         this->HitPoint = Input.HitPoint;
         this->EnergyPoint = Input.EnergyPoint;

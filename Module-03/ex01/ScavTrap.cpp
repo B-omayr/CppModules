@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:25:17 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/05 19:10:25 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/07 10:33:21 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,25 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     this->AttackDamage = 100;
     this->EnergyPoint = 50;
     this->HitPoint = 20;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &oldOne)
+{
+    std::cout << "\033[1;32mScavTrap Copy Constructor Called\033[0;m" << std::endl;
+    *this = oldOne;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &Input)
+{
+    if (this != &Input)
+    {
+        std::cout << "\033[1;32mScavTrap Copy Assignement Operator Called\033[0;m" << std::endl;
+        this->Name = Input.Name;
+        this->HitPoint = Input.HitPoint;
+        this->EnergyPoint = Input.EnergyPoint;
+        this->AttackDamage = Input.AttackDamage;
+    }
+    return *this;
 }
 
 ScavTrap::~ScavTrap()

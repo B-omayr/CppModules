@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:25:20 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/05 18:37:50 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/07 10:26:31 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class ScavTrap : public ClapTrap{
     public:
         ScavTrap();
         ScavTrap(std::string name);
+        ScavTrap(const ScavTrap &oldOne);
+        ScavTrap &operator = (const ScavTrap &Input);
         ~ScavTrap();
         
 	    void attack(const std::string &target);
