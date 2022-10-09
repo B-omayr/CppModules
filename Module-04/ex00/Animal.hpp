@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:58:25 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/07 16:49:28 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/09 08:35:08 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal {
         Animal();
         Animal(Animal &oldOne);
         Animal &operator = (Animal &Input);
-        ~Animal();
+        virtual ~Animal();
         
         std::string getType();
         void        setType(std::string type);
