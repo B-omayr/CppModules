@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 17:53:12 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/09 11:36:39 by ibra             ###   ########.fr       */
+/*   Created: 2022/10/08 09:32:41 by ibra              #+#    #+#             */
+/*   Updated: 2022/10/11 14:04:12 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,24 @@
 
 int main()
 {
-    Animal *meta = new Animal();
-    Animal *D = new Dog();
-    Animal *C = new Cat();
+    Cat obj1;
+    Cat obj2 = obj1;
 
-    std::cout << D->getType() << " " << std::endl;
-    std::cout << C->getType() << " " << std::endl;
-    D->makeSound();
-    C->makeSound();
-    meta->makeSound();
+    // int N;
 
-    delete meta;
-    delete D;
-    delete C;
-    
-    std::cout << std::string(30, '-') << "\033[1;33mTest WrongAnimal Bellow\033[0;m" << std::endl << std::endl;
-    
-    WrongAnimal *metaa = new WrongAnimal();
-    WrongAnimal *Ca = new WrongCat();
-
-    std::cout << Ca->getType() << " " << std::endl;
-    Ca->makeSound();
-    metaa->makeSound();
-
-    delete metaa;
-    delete Ca;  
+    // N = 4;
+    // Animal *Animals[N];
+    // for (int i = 0; i < N; i++)
+    // {
+    //     if (i < (N / 2))
+    //         Animals[i] = new Cat();
+    //     else
+    //         Animals[i] = new Dog();
+    // }
+    // std::cout << std::string(40, '-') << std::endl;
+    // for (int i = 0; i < N; i++)
+    // {
+    //     delete Animals[i];
+    // }
+    // std::cout << std::string(40, '-') << std::endl;
 }
-
-
-
