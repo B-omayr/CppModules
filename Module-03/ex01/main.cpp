@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:01:44 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/05 19:02:42 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/13 18:25:33 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void displayAttribute(ScavTrap (&P)[2])
 
 void letsPlay(ScavTrap (&P)[2])
 {
-    displayAttribute(P);
     P[0].attack(P[1].getName());
     P[1].takeDamage(P[0].getAD());
     displayAttribute(P);
@@ -38,7 +37,9 @@ void letsPlay(ScavTrap (&P)[2])
     displayAttribute(P);
     P[1].beRepaired(P[0].getAD());
     displayAttribute(P);
-    P[1].guardGate();
+    P[1].attack(P[0].getName());
+    P[0].takeDamage(P[1].getAD());
+    displayAttribute(P);
 }
 
 int main()
@@ -47,7 +48,7 @@ int main()
     std::string name;
 
     std::cout << "\033[1;33mWe Will play this Game with Two Player\033[0;m" << std::endl;
-    std::cout << "\033[1;36mCreate The Players Please\033[0;m" << std::endl;
+    std::cout << "\033[1;31mCreate The Players Please\033[0;m" << std::endl;
     for (int i = 0; i < 2; i++)
     {
         std::cout << "Give ScavTrap a Name : ";
@@ -56,3 +57,5 @@ int main()
     }
     letsPlay(P);
 }
+
+
