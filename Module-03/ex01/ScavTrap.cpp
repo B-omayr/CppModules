@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:25:17 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/07 10:33:21 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/13 18:15:17 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ ScavTrap::ScavTrap()
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
     std::cout << "\033[1;32mScavTrap " << name << " created\033[0;m" << std::endl;
-    this->AttackDamage = 100;
+    this->HitPoint = 100;
     this->EnergyPoint = 50;
-    this->HitPoint = 20;
+    this->AttackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &oldOne)

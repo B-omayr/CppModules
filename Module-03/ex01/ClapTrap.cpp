@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:24:31 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/07 10:34:18 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/13 18:16:17 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,18 +76,18 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (this->EnergyPoint <= 0)
-    {
-        std::cout << "\033[1;32mClapTrap " << this->Name << "Can't repaired Himself"
-                  << " Cause He has no more Point of Energy\033[0;m" << std::endl;
-        return;
-    }
     if (this->EnergyPoint > 0)
     {
         this->EnergyPoint--;
         this->HitPoint += amount;
         std::cout << "ClapTrap " << this->Name << " repaired Himself with "
                   << amount << " of Energy" << std::endl;
+    }
+    else
+    {
+        std::cout << "\033[1;32mClapTrap " << this->Name << "Can't repaired Himself"
+                  << " Cause He has no more Point of Energy\033[0;m" << std::endl;
+        return;
     }
 }
 

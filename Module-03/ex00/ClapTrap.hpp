@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 10:45:53 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/05 18:16:44 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/13 18:17:46 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class ClapTrap
 {
 private:
 	std::string Name;
-	int HitPoint;
-	int EnergyPoint;
-	int AttackDamage;
+	unsigned int HitPoint;
+	unsigned int EnergyPoint;
+	unsigned int AttackDamage;
 
 public:
 	ClapTrap();

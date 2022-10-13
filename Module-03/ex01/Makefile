@@ -6,11 +6,11 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 14:25:02 by iomayr            #+#    #+#              #
-#    Updated: 2022/10/04 16:27:37 by iomayr           ###   ########.fr        #
+#    Updated: 2022/10/13 18:21:46 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC = c++
 
