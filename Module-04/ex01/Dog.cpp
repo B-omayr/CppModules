@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 09:40:10 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/09 11:43:39 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/14 15:18:41 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@ Dog::Dog()
     std::cout << "\033[1;32mDog Constructor Called\033[0;m" << std::endl;
     this->type = "Dog";
     this->brain = new Brain();
+}
+
+Dog::Dog(Brain *brain)
+{
+    std::cout << "\033[1;32mDog Parametrized Constructor Called\033[0;m" << std::endl;
+    this->brain = new Brain();
+    this->brain->setIdeas(brain->getIdeas(0));
 }
 
 Dog::Dog(const Dog &oldOne)
@@ -31,6 +38,8 @@ Dog &Dog::operator = (const Dog &Input)
     {
         std::cout << "\033[1;32mDog Copy Assignement Operator Called\033[0;m" << std::endl;
         this->type = Input.type;
+        this->brain = new Brain;
+        *this->brain = *Input.getBrain();
     }
     return *this;
 }
@@ -44,4 +53,9 @@ Dog::~Dog()
 void Dog::makeSound()
 {
     std::cout << "\033[1;36mHaaw Haaw Haaw Haaw Haaw\033[0;m" << std::endl;
+}
+
+Brain *Dog::getBrain() const 
+{
+    return (this->brain);
 }

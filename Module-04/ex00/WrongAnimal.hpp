@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:39:27 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/07 17:53:26 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/13 18:44:57 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongAnimal {
         WrongAnimal();
         WrongAnimal(WrongAnimal &oldOne);
         WrongAnimal &operator = (WrongAnimal &Input);
-        ~WrongAnimal();
+        virtual ~WrongAnimal();
         
         std::string getType();
         void        setType(std::string type);

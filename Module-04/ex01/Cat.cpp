@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:48:55 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/11 14:18:07 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/14 15:18:20 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,17 @@ Cat::Cat()
     this->brain = new Brain();
 }
 
+Cat::Cat(Brain *brain)
+{
+    std::cout << "\033[1;32mCat Parametrized Constructor Called\033[0;m" << std::endl;
+    this->brain = new Brain();
+    this->brain->setIdeas(brain->getIdeas(0));
+}
+
 Cat::Cat(const Cat &oldOne)
 {
     std::cout << "\033[1;32mCat Copy Constructor Called\033[0;m" << std::endl;
-    this->type = oldOne.type;
-    this->brain = new Brain;
-    *this->brain = *oldOne.getBrain();
+    *this = oldOne;
 }
 
 Cat &Cat::operator = (const Cat &Input)

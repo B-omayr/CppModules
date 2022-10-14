@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:27:58 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/11 08:37:36 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/14 15:15:16 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,17 @@ Brain &Brain::operator = (const Brain &Input)
 Brain::~Brain()
 {
     std::cout << "\033[1;31mBrain Destructor Called\033[0;m" << std::endl;
+}
+
+void Brain::setIdeas(std::string idea)
+{
+    for (int i = 0; i < 100; i++)
+    {
+        this->ideas[i] = idea;
+    }
+}
+
+std::string Brain::getIdeas(int i) const
+{
+    return this->ideas[i];
 }

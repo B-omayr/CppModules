@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:36:10 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/10 13:17:59 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/14 11:06:30 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class Brain {
         Brain(const Brain &oldOne);
         Brain &operator = (const Brain &Input);
         ~Brain();
+
+        void setIdeas(std::string idea);
+        std::string getIdeas(int i) const;
 };
 
 #endif

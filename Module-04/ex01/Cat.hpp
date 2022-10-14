@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:49:00 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/11 14:15:27 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/14 15:17:43 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Cat : public Animal {
         Brain *brain;
     public:
         Cat();
+        Cat(Brain *brain);
         Cat(const Cat &oldOne);
         Cat &operator = (const Cat &Input);
         ~Cat();
