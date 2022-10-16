@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:49:00 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/14 15:17:43 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/16 15:02:40 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Cat : public Animal {
         Cat &operator = (const Cat &Input);
         ~Cat();
 
-        void    makeSound();
+        void    makeSound() const;
         Brain   *getBrain() const;
 };
 

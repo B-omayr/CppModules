@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:48:55 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/15 11:27:53 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/16 15:03:36 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Cat::~Cat()
     delete this->brain;
 }
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
     std::cout << "\033[1;36mMeeow  Meeow  Meeow\033[0;m" << std::endl;
 }

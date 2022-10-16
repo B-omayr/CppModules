@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:27:58 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/14 15:15:16 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/16 14:57:36 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Brain &Brain::operator = (const Brain &Input)
     if (this != &Input)
     {
         std::cout << "\033[1;32mBrain Copy Assignement Operator Called\033[0;m" << std::endl;
-        for (int i = 0; i > 100; i++)
+        for (int i = 0; i < 100; i++)
             this->ideas[i] = Input.ideas[i];
     }
     return (*this);

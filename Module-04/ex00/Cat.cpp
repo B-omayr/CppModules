@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:48:55 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/07 16:50:49 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/16 15:00:55 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Cat::~Cat()
     std::cout << "\033[1;31mCat Destructor Called\033[0;m" << std::endl;
 }
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
     std::cout << "\033[1;36mMeeow  Meeow  Meeow\033[0;m" << std::endl;
 }

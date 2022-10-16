@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 09:43:08 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/07 17:00:47 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/16 15:01:04 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public Animal {
         Dog &operator = (const Dog &Input);
         ~Dog();
 
-        void makeSound();
+        void makeSound() const;
 };
 
 #endif

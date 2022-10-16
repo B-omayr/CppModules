@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 09:40:10 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/14 15:18:41 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/16 15:02:50 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Dog::~Dog()
     delete this->brain;
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
     std::cout << "\033[1;36mHaaw Haaw Haaw Haaw Haaw\033[0;m" << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:41:35 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/07 16:47:21 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/16 15:00:25 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ std::string Animal::getType()
     return this->type;
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
     std::cout << "\033[1;36mAnimal Make sound\033[0;m" << std::endl;
 }
