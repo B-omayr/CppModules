@@ -6,19 +6,19 @@
 #    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 08:30:04 by iomayr            #+#    #+#              #
-#    Updated: 2022/10/17 11:03:58 by iomayr           ###   ########.fr        #
+#    Updated: 2022/10/18 16:15:07 by iomayr           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -std=c++98
 
 CC = c++
 
-SRC = main.cpp Bureaucrat.cpp 
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ = ${SRC:%.cpp=%.o}
 
-INC = Bureaucrat.hpp
+INC = Bureaucrat.hpp Form.hpp
 
 NAME = Bureaucrat
 

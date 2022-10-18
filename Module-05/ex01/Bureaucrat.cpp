@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:53:29 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/17 14:26:31 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/18 17:21:34 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,25 @@ unsigned int Bureaucrat::getGrade() const
 
 void Bureaucrat::increaseGrade()
 {
-    if (this->grade == 1)
-        throw Bureaucrat::GtH;
     this->grade--;
+    if (this->grade < 1)
+        throw Bureaucrat::GtH;
 }
 
 void Bureaucrat::decreaseGrade()
 {
-    if (this->grade == 150)
-        throw Bureaucrat::GtL;
     this->grade++;
+    if (this->grade > 150)
+        throw Bureaucrat::GtL;
+}
+
+void Bureaucrat::signForm(Form &F) const
+{
+    if (F.getIsSigned())
+        std::cout << "\033[1;36m" <<this->name << " signed " << F.getName() << "\033[0;m" << std::endl;
+    else
+        std::cout << "\033[1;36m" << this->name << " couldn't sign "
+            << F.getName() << " because grade is To Low" << std::endl; 
 }
 
 std::ostream & operator << (std::ostream &os, const Bureaucrat &B)
