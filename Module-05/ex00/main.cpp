@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:42:12 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/17 14:25:45 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/18 09:08:13 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	std::cout << "\033[1;33m--------------First Test---------------\033[0;m" << std::endl;
 	try{
-		Bureaucrat obj1("ibra", 1);
+		Bureaucrat obj1("ibra", 0);
 		if (obj1.getGrade() < 1)
 			throw obj1.GtH;
 		else if (obj1.getGrade() > 150)

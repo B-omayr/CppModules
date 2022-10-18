@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:53:29 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/17 14:26:31 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/18 16:03:43 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,16 @@ unsigned int Bureaucrat::getGrade() const
 
 void Bureaucrat::increaseGrade()
 {
-    if (this->grade == 1)
-        throw Bureaucrat::GtH;
     this->grade--;
+    if (this->grade < 1)
+        throw Bureaucrat::GtH;
 }
 
 void Bureaucrat::decreaseGrade()
 {
-    if (this->grade == 150)
-        throw Bureaucrat::GtL;
     this->grade++;
+    if (this->grade > 150)
+        throw Bureaucrat::GtL;
 }
 
 std::ostream & operator << (std::ostream &os, const Bureaucrat &B)
