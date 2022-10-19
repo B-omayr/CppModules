@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 17:54:41 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/19 10:44:45 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/19 17:00:05 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,15 @@ const int Form::getGradExec() const
 
 void Form::beSigned(Bureaucrat &B)
 {
-    if(B.getGrade() > this->getGradSign())
-        throw Form::GtL;
-    this->isSigned = true;
+    if (this->getGradSign() < B.getGrade())
+        throw Bureaucrat::GradeTooLowException();
+    else if (!this->isSigned)
+    {
+        this->isSigned = true;
+        std::cout << "\033[1;36m" << this->getName() << " Form was signed by " << B.getName() << "\033[0;m" << std::endl;
+    }
+    else
+        std::cout << "\033[1;36m" << this->getName() << " Form already Signed" << "\033[0;m" << std::endl;
 }
 
 std::ostream &operator << (std::ostream &os, const Form &F)
