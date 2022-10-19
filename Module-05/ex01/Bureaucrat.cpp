@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:53:29 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/18 17:21:34 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/19 10:49:30 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,20 @@ void Bureaucrat::decreaseGrade()
 
 void Bureaucrat::signForm(Form &F) const
 {
-    if (F.getIsSigned())
+    if (this->grade <= F.getGradSign() &&  !F.getIsSigned())
         std::cout << "\033[1;36m" <<this->name << " signed " << F.getName() << "\033[0;m" << std::endl;
     else
-        std::cout << "\033[1;36m" << this->name << " couldn't sign "
-            << F.getName() << " because grade is To Low" << std::endl; 
+    {
+        if (this->getGrade() > F.getGradSign())
+        {
+            std::cout << "\033[1;36m" << this->name << " couldn't sign "
+                << F.getName() << " because grade is To Low" << std::endl; 
+        }
+        else
+            std::cout << "\033[1;36m" << this->name << " couldn't sign "
+                << F.getName() << " because it's Already Signed" << std::endl;
+            
+    }
 }
 
 std::ostream & operator << (std::ostream &os, const Bureaucrat &B)

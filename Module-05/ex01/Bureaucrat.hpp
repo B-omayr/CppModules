@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:46:35 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/18 17:50:57 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/19 10:44:26 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Bureaucrat {
 			public:
 				virtual const char* what() const throw()
 				{
-					return "Grade is to High";
+					return "Bureaucrat Grade is to High";
 				}
 		}GtH;
 
@@ -48,7 +48,7 @@ class Bureaucrat {
 			public:
 				virtual const char* what() const throw()
 				{
-					return "Grade is to Low";
+					return "Bureaucrat Grade is to Low";
 				}
 		}GtL;
 };

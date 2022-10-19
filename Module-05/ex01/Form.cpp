@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 17:54:41 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/18 17:21:06 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/19 10:44:45 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,12 @@ void Form::beSigned(Bureaucrat &B)
     if(B.getGrade() > this->getGradSign())
         throw Form::GtL;
     this->isSigned = true;
+}
+
+std::ostream &operator << (std::ostream &os, const Form &F)
+{
+    os << "\033[1;36mThis Form " << F.getName() << (F.getIsSigned() ? " it's Signed" : " it's Not Signed yet")
+        <<" ,Form grade To sign it is " << F.getGradSign() << " ,Form grade To execute it is " 
+        << F.getGradExec() << "\033[0;m";
+    return os;
 }

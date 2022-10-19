@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:25:04 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/18 17:50:37 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/19 10:44:50 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,18 @@ class Form {
 			public:
 				const char *what() const throw()
 				{
-					return ("Grade Too High Exception");
+					return "Form Grade is Too High Exception";
 				} 
 		}GtH;
 		class GradeTooLowException : public std::exception {
 			public:
 				const char *what() const throw()
 				{
-					return ("Grade Too Low Exception");
+					return "Form Grade is Too Low";
 				}
 		}GtL;
 };
+
+std::ostream &operator << (std::ostream &os, const Form &F);
 
 #endif
