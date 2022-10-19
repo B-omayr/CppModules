@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:46:35 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/18 09:25:08 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/19 16:32:18 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Bureaucrat {
 				{
 					return "Grade is to High";
 				}
-		}GtH;
+		};
 
 		class GradeTooLowException : public std::exception {
 			public:
@@ -48,7 +48,7 @@ class Bureaucrat {
 				{
 					return "Grade is to Low";
 				}
-		}GtL;
+		};
 };
 
 std::ostream &operator << (std::ostream &os, const Bureaucrat &B);
