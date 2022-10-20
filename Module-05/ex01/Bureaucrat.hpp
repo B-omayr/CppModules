@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:46:35 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/19 10:44:26 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/20 09:18:13 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Bureaucrat {
 				{
 					return "Bureaucrat Grade is to High";
 				}
-		}GtH;
+		};
 
 		class GradeTooLowException : public std::exception {
 			public:
@@ -50,7 +50,7 @@ class Bureaucrat {
 				{
 					return "Bureaucrat Grade is to Low";
 				}
-		}GtL;
+		};
 };
 
 std::ostream &operator << (std::ostream &os, const Bureaucrat &B);

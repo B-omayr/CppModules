@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:53:29 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/19 16:19:54 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/20 09:18:54 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ void Bureaucrat::increaseGrade()
 {
     this->grade--;
     if (this->grade < 1)
-        throw Bureaucrat::GtH;
+        throw Bureaucrat::GradeTooHighException();
 }
 
 void Bureaucrat::decreaseGrade()
 {
     this->grade++;
     if (this->grade > 150)
-        throw Bureaucrat::GtL;
+        throw Bureaucrat::GradeTooLowException();
 }
 
 void Bureaucrat::signForm(Form &F) const

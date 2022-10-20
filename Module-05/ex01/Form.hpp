@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:25:04 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/19 10:44:50 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/20 09:19:05 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ class Form {
 				{
 					return "Form Grade is Too High Exception";
 				} 
-		}GtH;
+		};
 		class GradeTooLowException : public std::exception {
 			public:
 				const char *what() const throw()
 				{
 					return "Form Grade is Too Low";
 				}
-		}GtL;
+		};
 };
 
 std::ostream &operator << (std::ostream &os, const Form &F);
