@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:42:12 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/19 16:59:22 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/20 11:13:32 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int main()
 		Bureaucrat obj1("ibra", 10);
 		Form obj2("omayr", 0, 7, 33);
 
+		std::cout << obj1 << std::endl;
+		std::cout << obj2 << std::endl;
 		obj2.beSigned(obj1);
 		obj1.signForm(obj2);
 	}
