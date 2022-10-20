@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:53:29 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/19 16:35:25 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/20 09:52:00 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ Bureaucrat::Bureaucrat()
 
 Bureaucrat::Bureaucrat(std::string n, unsigned int g) : name(n)
 {
-    this->grade = g;
     std::cout << "\033[0;32mBureaucrat "  << this->name << " was Created\033[0;m" << std::endl; 
+    this->grade = g;
+    if (this->grade < 0)
+        throw Bureaucrat::GradeTooHighException();
+    else if (this->grade > 150)
+        throw Bureaucrat::GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &oldOne)
