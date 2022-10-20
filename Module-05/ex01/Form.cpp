@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 17:54:41 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/19 17:00:05 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/20 10:10:16 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ Form::Form(std::string n, bool isSg, int gs, int gex)
     : name(n), isSigned(isSg), gradSign(gs), gradExec(gex)
 {
     std::cout << "\033[1;32mForm Parametrized Constructor For " << this->name << " Called\033[0;m" << std::endl;
+    if (this->getGradSign() < 1 || this->getGradExec() < 1)
+        throw GradeTooHighException();
+    if (this->getGradSign() > 150 || this->getGradExec() > 150)
+        throw GradeTooLowException();
 }
 
 Form::Form(const Form &oldOne)
