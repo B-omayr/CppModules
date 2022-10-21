@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 17:54:41 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/20 10:16:33 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/21 10:47:29 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ bool Form::getIsSigned() const
     return this->isSigned;
 }
 
-const int Form::getGradSign() const
+int Form::getGradSign() const
 {
     return this->gradSign;
 }
 
-const int Form::getGradExec() const
+int Form::getGradExec() const
 {
     return this->gradExec;
 }
