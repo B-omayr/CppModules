@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:53:29 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/20 09:52:00 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/21 10:41:27 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ std::string Bureaucrat::getName() const
     return this->name;
 }
 
-unsigned int Bureaucrat::getGrade() const
+int Bureaucrat::getGrade() const
 {
     return this->grade;
 }
