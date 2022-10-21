@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:25:04 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/20 09:19:05 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/21 10:41:06 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class Form {
 
 		const std::string	getName() const;
         bool				getIsSigned() const;
-        const int			getGradSign() const;
-        const int			getGradExec() const;
+        int			getGradSign() const;
+        int			getGradExec() const;
         
 		void beSigned(Bureaucrat &B);
 		
