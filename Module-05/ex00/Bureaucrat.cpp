@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:53:29 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/21 10:41:27 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/21 17:53:55 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,16 @@ void Bureaucrat::decreaseGrade()
     this->grade++;
     if (this->grade > 150)
         throw Bureaucrat::GradeTooLowException();
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade is to High";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade is to Low";
 }
 
 std::ostream & operator << (std::ostream &os, const Bureaucrat &B)

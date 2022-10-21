@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:46:35 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/21 10:45:47 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/21 17:55:11 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,13 @@ class Bureaucrat {
 
 		class GradeTooHighException : public std::exception {
 			public:
-				virtual const char* what() const throw()
-				{
-					return "Bureaucrat Grade is to High";
-				}
-		}GtH;
+				const char* what() const throw();
+		};
 
 		class GradeTooLowException : public std::exception {
 			public:
-				virtual const char* what() const throw()
-				{
-					return "Bureaucrat Grade is to Low";
-				}
-		}GtL;
+				const char* what() const throw();
+		};
 };
 
 std::ostream &operator << (std::ostream &os, const Bureaucrat &B);

@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:53:29 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/21 10:42:33 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/21 17:55:29 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,16 @@ void Bureaucrat::signForm(Form &F) const
                 << F.getName() << " because it's Already Signed" << std::endl;
             
     }
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade is to High";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade is to Low";
 }
 
 std::ostream & operator << (std::ostream &os, const Bureaucrat &B)

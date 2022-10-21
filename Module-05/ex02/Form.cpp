@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 17:54:41 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/21 10:47:29 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/21 18:05:20 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,21 @@ void Form::beSigned(Bureaucrat &B)
     }
     else
         std::cout << "\033[1;36m" << this->getName() << " Form already Signed" << "\033[0;m" << std::endl;
+}
+
+const char *Form::GradeTooHighException:: what() const throw()
+{
+	return "Form Grade is Too High Exception";
+}
+
+const char *Form::GradeTooLowException:: what() const throw()
+{
+	return "Form Grade is Too Low Exception";
+}
+
+const char *Form::FormNotSignedException:: what() const throw()
+{
+	return "Form Not Signed yet";
 }
 
 std::ostream &operator << (std::ostream &os, const Form &F)

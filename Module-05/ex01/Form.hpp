@@ -6,7 +6,7 @@
 /*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:25:04 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/21 10:41:06 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/21 18:01:25 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,11 @@ class Form {
 		
 		class GradeTooHighException : public std::exception {
 			public:
-				const char *what() const throw()
-				{
-					return "Form Grade is Too High Exception";
-				} 
+				const char *what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
 			public:
-				const char *what() const throw()
-				{
-					return "Form Grade is Too Low";
-				}
+				const char *what() const throw();
 		};
 };
 
