@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Casting.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 09:36:30 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/25 16:30:06 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/26 09:21:14 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CATSING_HPP
+#ifndef CASTING_HPP
 # define CASTING_HPP
 
 #include <iostream>
@@ -58,6 +58,13 @@ class Casting {
 		void	iToOther(void);
 		void	dToOther(void);
 		void	fToOther(void);
+
+        void    printChar() const;
+        void    printInt() const;
+        void    printFloat() const;
+        void    printDouble() const;
 };
+
+std::ostream &operator << (std::ostream &os, const Casting &B);
 
 #endif

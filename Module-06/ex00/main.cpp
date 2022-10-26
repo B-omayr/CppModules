@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 09:28:04 by iomayr            #+#    #+#             */
-/*   Updated: 2022/10/25 15:50:42 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/26 09:30:53 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main(int ac, char **av)
 		   c.setInput(av[1]);
 		   c.detectType();
 		   c.convert();
+           std::cout << c ;
         }        
     }
     catch(char const *str){

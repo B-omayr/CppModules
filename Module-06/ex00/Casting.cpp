@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Casting.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 09:36:33 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/25 16:33:37 by ibra             ###   ########.fr       */
+/*   Updated: 2022/10/26 09:39:38 by iomayr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ bool Casting::isInt(void)
     int i = 0;
     if (this->Input[i] == '-' || this->Input[i] == '+')
         i++;
-    for (int j = i; j < this->Input.length(); j++)
+    for (int j = i; j < (int)this->Input.length(); j++)
     {
         if (!isdigit(this->Input[j]))
             return false;
-        if (j == (this->Input.length() - 1))
+        if (j == (int)(this->Input.length() - 1))
             return true;
     }
     return 0;
@@ -80,11 +80,11 @@ bool Casting::isDouble(void)
         return false;
     if (this->Input[i] == '-' || this->Input[i] == '+')
         i++;
-    for (int j = i; j < this->Input.length() - 1; j++)
+    for (int j = i; j < (int)this->Input.length() - 1; j++)
     {
         if (this->Input[j] == '.')
             cp++;
-        if (!isdigit(this->Input[j]) && this->Input[j] != '.' || cp > 1)
+        if ((!isdigit(this->Input[j]) && this->Input[j] != '.') || cp > 1)
             return false;
     }
     return true;
@@ -94,16 +94,16 @@ bool Casting::isFloat(void)
 {
     int i = 0;
     int cp = 0;
-    if (this->Input.find('.') == std::string::npos || *this->Input.rbegin() != 'f'
-        || this->Input.find('.') == (this->Input.length() - 2))
+    if ((this->Input.find('.') == std::string::npos) || (*this->Input.rbegin() != 'f')
+        || (this->Input.find('.') == (this->Input.length() - 2)))
         return false;
     if (this->Input[i] == '-' || this->Input[i] == '+')
         i++;
-    for (int j = i; j < this->Input.length() - 1; j++)
+    for (int j = i; j < (int)this->Input.length() - 1; j++)
     {
         if (this->Input[j] == '.')
             cp++;
-        if (!isdigit(this->Input[j]) && this->Input[j] != '.' || cp > 1)
+        if ((!isdigit(this->Input[j]) && this->Input[j] != '.') || cp > 1)
             return false;
     }
     return true;
@@ -191,4 +191,71 @@ void Casting::convert(void)
 		default:
 			break;
     }
+}
+
+void Casting::printChar(void) const
+{
+	if (!isprint(this->charValue))
+		std::cout << "Non displayable";
+	else if (this->type == PSEUDO)
+		std::cout << "Impossible";
+	else
+		std::cout << "'" << charValue << "'";
+	std::cout << std::endl;
+}
+
+void Casting::printInt(void) const
+{
+	if (this->type == PSEUDO)
+		std::cout << "Impossible";
+	else
+		std::cout << intValue;
+	std::cout << std::endl;
+}
+
+void Casting::printFloat(void) const
+{
+	if (this->Input == "nan" || this->Input == "nanf")
+		std::cout << "nanf";
+	else if (this->Input == "inf" || this->Input == "inff")
+		std::cout << "inff";
+	else if (this->Input == "+inf" || this->Input == "+inff")
+		std::cout << "+inff";
+	else if (this->Input == "-inf" || this->Input == "-inff")
+		std::cout << "-inff";
+	else{
+		if (this->floatValue - static_cast<int>(this->floatValue) == 0 )
+            std::cout << floatValue << ".0f";
+		else
+			std::cout << floatValue << "f";
+	}
+	std::cout << std::endl;
+}
+
+void Casting::printDouble(void) const
+{
+	if (this->Input == "nan" || this->Input == "nanf")
+		std::cout << "nan";
+	else if (this->Input == "inf" || this->Input == "inff")
+		std::cout << "inf";
+	else if (this->Input == "+inf" || this->Input == "+inff")
+		std::cout << "+inf";
+	else if (this->Input == "-inf" || this->Input == "-inff")
+		std::cout << "-inf";
+	else{
+		if (this->doubleValue - static_cast<int>(this->doubleValue) == 0 )
+            std::cout << doubleValue << ".0";
+		else
+			std::cout << doubleValue;
+	}
+	std::cout << std::endl;
+}
+
+std::ostream &operator << (std::ostream &os, const Casting &C)
+{
+    os << "Char: "; C.printChar();
+	os << "Int: "; C.printInt();
+	os << "float: "; C.printFloat();
+	os << "double: "; C.printDouble();
+	return os;
 }
