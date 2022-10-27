@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Casting.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 09:36:33 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/26 09:39:38 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/27 18:52:22 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,8 +169,27 @@ void Casting::fToOther(void)
     this->doubleValue = static_cast<double>(this->floatValue);
 }
 
+bool	Casting::checkIfItCast(void)
+{
+	try{
+		if (this->type == INT)
+			std::stoi(this->Input);
+		else if (this->type == FLOAT)
+			std::stof(this->Input);
+		else if (this->type == DOUBLE)
+			std::stod(this->Input);
+	}
+	catch (std::exception &e){
+		itNotCast = true;
+		return true;
+	}
+	return false;
+}
+
 void Casting::convert(void)
 {
+	if (checkIfItCast())
+		return ;
     switch(this->type){
         case CHAR:
             this->charValue = this->Input[0];
@@ -195,10 +214,10 @@ void Casting::convert(void)
 
 void Casting::printChar(void) const
 {
-	if (!isprint(this->charValue))
-		std::cout << "Non displayable";
-	else if (this->type == PSEUDO)
+	if (itNotCast || this->type == PSEUDO)
 		std::cout << "Impossible";
+	else if (!isprint(this->charValue))
+		std::cout << "Non displayable";
 	else
 		std::cout << "'" << charValue << "'";
 	std::cout << std::endl;
@@ -206,7 +225,7 @@ void Casting::printChar(void) const
 
 void Casting::printInt(void) const
 {
-	if (this->type == PSEUDO)
+	if (itNotCast || this->type == PSEUDO)
 		std::cout << "Impossible";
 	else
 		std::cout << intValue;
@@ -215,7 +234,9 @@ void Casting::printInt(void) const
 
 void Casting::printFloat(void) const
 {
-	if (this->Input == "nan" || this->Input == "nanf")
+	if (itNotCast)
+		std::cout << "Impossible";
+	else if (this->Input == "nan" || this->Input == "nanf")
 		std::cout << "nanf";
 	else if (this->Input == "inf" || this->Input == "inff")
 		std::cout << "inff";
@@ -234,7 +255,9 @@ void Casting::printFloat(void) const
 
 void Casting::printDouble(void) const
 {
-	if (this->Input == "nan" || this->Input == "nanf")
+	if (itNotCast)
+		std::cout << "Impossible";
+	else if (this->Input == "nan" || this->Input == "nanf")
 		std::cout << "nan";
 	else if (this->Input == "inf" || this->Input == "inff")
 		std::cout << "inf";

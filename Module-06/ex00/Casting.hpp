@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Casting.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 09:36:30 by ibra              #+#    #+#             */
-/*   Updated: 2022/10/26 09:21:14 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/10/27 18:50:27 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Casting {
         int			intValue;
         float		floatValue;
         double		doubleValue;
+		bool		itNotCast;
         e_type		type;
         
     public:
@@ -45,6 +46,7 @@ class Casting {
         ~Casting();
         
         void	setInput(char *str);
+		bool	checkIfItCast(void);
         
         void	detectType();
         bool	isFloat(void);
