@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:58:11 by iomayr            #+#    #+#             */
-/*   Updated: 2022/11/30 17:35:06 by iomayr           ###   ########.fr       */
+/*   Updated: 2022/12/01 14:06:33 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,25 @@
 
 #include <iostream>
 #include <stack>
+#include <deque>
 
-template <typename T>
+template <class T, class Container = std::deque<T> >
 class MutantStack : public std::stack<T> {
     public:
+        MutantStack() {}
+        MutantStack(const MutantStack &oldOne) {
+            *this = oldOne;
+        }
+        MutantStack &operator=(const MutantStack &Input) {
+            if (*this != Input)
+                *this = Input;
+            return (*this);
+        }
+        ~MutantStack() {}
         
+        typedef typename Container::iterator iterator;
+        iterator begin() { return this->c.begin(); }
+		iterator end() { return this->c.end(); }
 };
 
 #endif
