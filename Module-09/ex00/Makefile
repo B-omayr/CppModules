@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: iomayr <iomayr@student.42.fr>              +#+  +:+       +#+         #
+#    By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/17 10:33:36 by iomayr            #+#    #+#              #
-#    Updated: 2023/03/17 10:57:33 by iomayr           ###   ########.fr        #
+#    Updated: 2023/03/20 13:55:12 by ibra             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = 
 
 CC = c++
 
