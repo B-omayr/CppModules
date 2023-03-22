@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:33:31 by iomayr            #+#    #+#             */
-/*   Updated: 2023/03/20 15:30:42 by ibra             ###   ########.fr       */
+/*   Updated: 2023/03/22 11:06:35 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ class BitcoinExchange{
         std::map<std::string, float, std::greater<std::string> > myMap;
     public:
         BitcoinExchange();
+        BitcoinExchange(const BitcoinExchange &copy);
+        BitcoinExchange &operator = (const BitcoinExchange &Input);
+        ~BitcoinExchange();
         void exchangeBtc(std::ifstream &dataFile, std::ifstream &inputFile);
         void getData(std::ifstream &file, bool dataOrInput);
         void execLine(std::string &line, bool dataOrInput);

@@ -6,13 +6,32 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:33:27 by iomayr            #+#    #+#             */
-/*   Updated: 2023/03/20 17:34:52 by ibra             ###   ########.fr       */
+/*   Updated: 2023/03/22 11:13:19 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange(): month(0), year(0), day(0){}
+BitcoinExchange::BitcoinExchange(): month(0), year(0), day(0){
+    //Xx
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy){
+    *this = copy;
+}
+BitcoinExchange &BitcoinExchange::operator = (const BitcoinExchange &Input)
+{
+    if (this != &Input){
+        this->day = Input.day;
+        this->year = Input.year;
+        this->month = Input.month;
+        this->myMap = Input.myMap;
+    }
+    return *this;
+}
+BitcoinExchange::~BitcoinExchange(){
+    //Xx
+}
 
 void BitcoinExchange::exchangeBtc(std::ifstream &dataFile, std::ifstream &InputFile)
 {
@@ -76,7 +95,7 @@ float BitcoinExchange::checkGetValue(std::string value)
     }
     if (countPoint > 1)
         throw std::runtime_error("Error: Not a valid Number");
-    return (std::stof(value));
+    return (std::atof(value.c_str()));
 }
 
 void BitcoinExchange::execLine(std::string &line, bool dataOrInput)
