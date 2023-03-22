@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:33:27 by iomayr            #+#    #+#             */
-/*   Updated: 2023/03/22 11:13:19 by ibra             ###   ########.fr       */
+/*   Updated: 2023/03/22 14:17:52 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,12 @@ void BitcoinExchange::exchangeBtc(std::ifstream &dataFile, std::ifstream &InputF
 void BitcoinExchange::getData(std::ifstream &file, bool dataOrInput)
 {
     std::string line;
+    int count = -1;
 
     while (getline(file, line))
     {
-        if (!line.compare("date,exchange_rate") || !line.compare("date | value") || line.size() == 0)
+        count++;
+        if (count == 0 || line.size() == 0)
             continue;
         execLine(line, dataOrInput);
         line.clear();
