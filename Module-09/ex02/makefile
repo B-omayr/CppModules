@@ -6,12 +6,11 @@
 #    By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 09:57:37 by ibra              #+#    #+#              #
-#    Updated: 2023/03/22 18:51:45 by ibra             ###   ########.fr        #
+#    Updated: 2023/03/24 15:36:18 by ibra             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FLAGS = -Wall -Wextra -Werror 
-
 CC = c++
 
 SRC = main.cpp PmergeMe.cpp

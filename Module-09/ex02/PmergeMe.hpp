@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 09:59:38 by ibra              #+#    #+#             */
-/*   Updated: 2023/03/23 11:36:53 by ibra             ###   ########.fr       */
+/*   Updated: 2023/03/25 12:22:43 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PMERGEME_HPP
 
 #include <iostream>
-#include <chrono>
+// #include <chrono>
 #include <string>
 #include <vector>
 #include <deque>
@@ -32,7 +32,14 @@ class Pmerge{
 
         void storeData(int ac, char **av);
         void sortData();
-        void print();
+        template <typename T>
+        void print(T &container);
+        template <typename T>
+        void insertSort(T &container);
+        template <typename T>
+        void sort(T &container);
+        template <typename T>
+        void merge(T &container, T &left, T &right);
 };
 
 #endif
