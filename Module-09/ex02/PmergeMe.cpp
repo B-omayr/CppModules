@@ -6,7 +6,7 @@
 /*   By: ibra <ibra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 11:37:22 by ibra              #+#    #+#             */
-/*   Updated: 2023/03/25 16:55:52 by ibra             ###   ########.fr       */
+/*   Updated: 2023/03/26 14:32:57 by ibra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,19 @@ void Pmerge::sortData()
 {
     std::cout << "Before : ";
     print(v);
-    // std::clock_t vstart = std::clock();
+    std::clock_t vstart = std::clock();
     sort(v);
+    std::clock_t vend = std::clock();
+    std::clock_t dstart = std::clock();
+    sort(d);
+    std::clock_t dend = std::clock();
     std::cout << "After: ";
     print(v);
-    //
+
+    double vduration = (double)(vend - vstart) / 1000;
+	double dduration = (double)(dend - dstart) / 1000;
+	std::cout << "Time to process a range of " << v.size() << " elements with std::vector " << vduration << " us " << std::endl;
+	std::cout << "Time to process a range of " << d.size() << " elements with std::deque " << dduration << " us "  << std::endl;
 }
 
 template <typename T>
@@ -85,7 +93,6 @@ void Pmerge::print(T &container)
 template <typename T>
 void Pmerge::insertSort(T &container)
 {
-    std::cout << "here" << std::endl;
     for (size_t i = 0; i < container.size(); i++)
     {
         for (size_t j = 0; j < container.size() - 1; j++)
@@ -100,21 +107,21 @@ void Pmerge::insertSort(T &container)
 template <typename T>
 void Pmerge::merge(T &container, T &left, T &right)
 {
-	size_t k = 0;
+	size_t n = 0;
 	size_t i = 0;
 	size_t j = 0;
     
 	while (i < left.size() && j < right.size())
 	{
 		if (left[i] < right[j])
-			container[k++] = left[i++];
+			container[n++] = left[i++];
 		else
-			container[k++] = right[j++];
+			container[n++] = right[j++];
 	}
 	while (i < left.size())
-		container[k++] = left[i++];
+		container[n++] = left[i++];
 	while (j < right.size())
-		container[k++] = right[j++];
+		container[n++] = right[j++];
 }
 
 template <typename T>
@@ -126,7 +133,6 @@ void Pmerge::sort(T &container)
 		insertSort(container);
 		return ;
 	}
-    std::cout << "---first" << std::endl;
 	int mid = size / 2;
 	T left(mid);
 	T right(size - mid);
@@ -137,5 +143,4 @@ void Pmerge::sort(T &container)
 	sort(left);
 	sort(right);
 	merge(container, left, right);
-    std::cout << "---last" << std::endl;
 } 
